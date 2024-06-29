@@ -1,0 +1,133 @@
+.dashboard-home {
+  padding: 20px;
+}
+
+.overview,
+.info-dashboard-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.details-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.current-balance,
+.stat,
+.dashboard-card {
+  background: linear-gradient(135deg, #f4c782, #eb8b50);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Flex container for second row cards */
+.details-box .flex-center {
+  display: flex;
+  justify-content: center;
+  grid-column: span 3;
+  gap: 20px;
+}
+
+/* Flex items */
+.flex-center .dashboard-card {
+  width: calc((100% / 3) - 40px); /* Adjust width as needed */
+}
+
+.charts {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chart {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recent-sold {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.recent-sold table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-sold th,
+.recent-sold td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.top-categories {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-categories ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.top-categories li {
+  margin-bottom: 10px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1024px) {
+  .details-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .details-box .flex-center {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .details-box {
+    grid-template-columns: 1fr;
+  }
+
+  .details-box .flex-center {
+    grid-column: span 1;
+  }
+
+  .charts {
+    flex-direction: column;
+  }
+
+  .chart {
+    margin-bottom: 20px;
+  }
+
+  .overview,
+  .info-dashboard-cards {
+    flex-direction: column;
+  }
+
+  .recent-sold,
+  .current-balance,
+  .stat,
+  .dashboard-card {
+    padding: 10px;
+  }
+}

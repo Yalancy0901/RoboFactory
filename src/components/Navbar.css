@@ -1,0 +1,285 @@
+/* Reset margins and padding for body and html */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure all elements use border-box */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Navbar Styles */
+.navbar {
+
+  width: 100%; /* Full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white; /* White background */
+  color: #232f3e; /* Dark blue text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1000; /* Ensure the navbar stays on top */
+  transition: padding 0.3s ease;
+}
+
+/* Container for centering content */
+.navbar-container {
+  max-width: 1200px; /* Max width for the content */
+  width: 100%; /* Full width */
+  margin: 0 auto; /* Center the content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: #232f3e; /* Dark blue text color */
+  text-decoration: none;
+}
+
+.navbar-logo:hover {
+  color: orange; /* Orange color on hover */
+}
+
+.navbar-logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-location {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  cursor: pointer;
+  position: relative; /* Ensure position relative for the dropdown */
+}
+
+.navbar-location:hover {
+  color: orange; /* Orange color on hover */
+}
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-center input {
+  width: 70%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-user {
+  margin-right: 20px;
+}
+
+.navbar-link {
+  color: #232f3e; /* Dark blue text color */
+  text-decoration: none;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link:hover {
+  color: orange; /* Orange color on hover */
+}
+
+/* Remove underline for all links by default */
+a {
+  text-decoration: none;
+}
+
+/* Navbar categories */
+.navbar-categories {
+  background-color: #f9f9f9; /* Light grey for categories background */
+  padding: 10px 20px;
+}
+
+.navbar-categories ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-categories li {
+  margin-right: 20px;
+}
+
+.navbar-categories li a {
+  color: #232f3e; /* Dark blue text color */
+}
+
+.navbar-categories li a:hover {
+  color: orange; 
+  text-decoration: none;
+}
+
+/* City dropdown */
+.city-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white; /* White background for dropdown */
+  border: 1px solid #ccc;
+  border-top: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  color: #232f3e; /* Dark blue text color */
+  z-index: 100; /* Set higher z-index for the dropdown to ensure it is above other elements */
+}
+
+.city-dropdown li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.city-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.navbar-categories-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Categories dropdown */
+.categories-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white; /* White background */
+  color: #232f3e; /* Dark blue text color */
+  border: 1px solid #ccc;
+  padding: 10px 0;
+  z-index: 1000;
+  width: 200px;
+}
+
+.categories-dropdown:hover {
+  color: orange;
+}
+
+.categories-dropdown li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.categories-dropdown li:hover {
+  background-color: #f0f0f0;
+  color: orange;
+}
+
+.categories-dropdown a {
+  color: #232f3e; /* Dark blue text color */
+}
+
+.categories-dropdown a:hover {
+  color: orange; /* Orange color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar-center input {
+    width: 60%;
+  }
+  
+  .navbar-right {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-center {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .navbar-center input {
+    width: 100%;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .navbar-categories {
+    padding: 10px;
+  }
+
+  .navbar-categories ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-categories li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 5px 10px;
+  }
+
+  .navbar-logo img {
+    height: 30px;
+    margin-right: 5px;
+  }
+
+  .navbar-center input {
+    padding: 8px;
+  }
+
+  .navbar-link {
+    margin-left: 10px;
+  }
+
+  .navbar-categories {
+    padding: 5px;
+  }
+
+  .navbar-categories ul {
+    flex-direction: column;
+  }
+
+  .navbar-categories li {
+    margin-bottom: 5px;
+  }
+}

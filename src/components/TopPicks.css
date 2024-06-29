@@ -1,0 +1,174 @@
+/* TopPicks.css */
+
+.top-picks {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.products-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* Stack products vertically on smaller screens */
+  align-items: center;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  z-index: 1;
+  display: none;
+  /* Hide navigation buttons on smaller screens */
+}
+
+.products {
+  display: flex;
+  overflow-x: hidden;
+  /* Remove horizontal scroll */
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling for iOS */
+  scroll-snap-type: x mandatory;
+  /* Snap to each product card */
+}
+
+.toppicksproduct-card {
+  width: 250px;
+  padding: 10px;
+  margin: 0 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+  flex: 0 0 auto;
+  /* Prevent product cards from shrinking */
+  scroll-snap-align: start;
+  /* Ensure each card snaps into view */
+}
+
+.toppicksproduct-card.active {
+  transform: scale(1.05);
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.toppicksproduct-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.toppicksproduct-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Fit the image within the given height */
+  transition: transform 0.3s ease;
+}
+
+.product-details {
+  padding: 10px 0;
+}
+
+.product-name {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #888;
+}
+
+.rating-stars {
+  color: #ffc107;
+  /* Star color */
+  margin-bottom: 5px;
+}
+
+.star {
+  margin-right: 2px;
+}
+
+.quantity-input {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-input label {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.quantity-input input {
+  width: 50px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
+  /* Add space between the buttons */
+}
+
+.add-to-cart-btn,
+.buy-now-btn {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  flex: 1;
+  /* Ensure both buttons take up equal space */
+}
+
+.add-to-cart-btn:hover,
+.buy-now-btn:hover {
+  background-color: coral;
+  /* Darker blue on hover */
+}
+
+@media (max-width: 768px) {
+  .nav-button {
+    display: block;
+    /* Show navigation buttons on smaller screens */
+  }
+
+  .products-container {
+    padding: 10px;
+    /* Adjust padding for smaller screens */
+  }
+
+  .products {
+    overflow-x: auto;
+    /* Enable horizontal scroll */
+    flex-wrap: nowrap;
+    /* Ensure products stay in a single row */
+  }
+
+  .toppicksproduct-card {
+    margin: 0 5px;
+    width: 250px;
+    
+  }
+}

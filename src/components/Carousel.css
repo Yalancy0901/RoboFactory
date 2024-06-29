@@ -1,0 +1,24 @@
+.App {
+  max-width: 800px; /* Example fixed width for the carousel */
+  margin: 0 auto;
+  max-height: 655px;
+  height: 655px;
+}
+
+.slick-slide img {
+  display: grid;
+  margin: 0 auto;
+  max-height: 670px;
+}
+
+.carousel-wrapper {
+  max-width: 100%; /* Ensure the carousel wrapper adjusts to its parent's width */
+  margin: 0 auto;
+}
+
+.carousel-image {
+  width: 100%; /* Ensure images fill the available space */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Prevent any potential alignment issues */
+  max-width: 100%; /* Ensure images do not exceed their natural size */
+}
